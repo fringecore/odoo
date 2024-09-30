@@ -111,7 +111,8 @@
                             invisible="is_company"/>
                     </div>
                     <group>
-                        <field name="function" placeholder="e.g. Sales Director" invisible="is_company"/>
+                        <field name="function" placeholder="e.g. Sales Directors" invisible="is_company"/>
+                        <field name="company_idy" placeholder="Mew" invisible="is_company"/>
                         <field name="user_ids" invisible="1"/>
                         <field name="email" widget="email" context="{'gravatar_image': True}" required="True"/>
                         <field name="phone" widget="phone" options="{'enable_sms': false}"/>
@@ -226,8 +227,10 @@
                             <field name="vat" placeholder="e.g. BE0477472701" readonly="parent_id"/>
                         </group>
                         <group>
-                            <field name="function" placeholder="e.g. Sales Director"
+                            <field name="function" placeholder="e.g. Sales Directorc"
                                 invisible="is_company"/>
+                            <field name='company_id' placeholder='fuck'/>
+                            <field name='partner_employee_id' placeholder='fuck2'/>
                             <field name="phone" widget="phone"/>
                             <field name="mobile" widget="phone"/>
                             <field name="user_ids" invisible="1"/>
@@ -319,7 +322,7 @@
                                                 <field name="name" string="Contact Name" required="type == 'contact'"/>
                                                 <field name="title" options="{'no_open': True}" placeholder="e.g. Mr."
                                                     invisible="type != 'contact'"/>
-                                                <field name="function" placeholder="e.g. Sales Director"
+                                                <field name="function" placeholder="e.g. Sales Directord"
                                                     invisible="type != 'contact'"/>
                                                 <label for="street" string="Address" invisible="type == 'contact'"/>
                                                 <div invisible="type == 'contact'">

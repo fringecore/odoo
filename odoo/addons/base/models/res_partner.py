@@ -206,6 +206,7 @@ class Partner(models.Model):
     name = fields.Char(index=True, default_export_compatible=True)
     complete_name = fields.Char(compute='_compute_complete_name', store=True, index=True)
     date = fields.Date(index=True)
+    company_idy = fields.Many2one('res.company')
     title = fields.Many2one('res.partner.title')
     parent_id = fields.Many2one('res.partner', string='Related Company', index=True)
     parent_name = fields.Char(related='parent_id.name', readonly=True, string='Parent name')
@@ -276,6 +277,7 @@ class Partner(models.Model):
         selection=[('person', 'Individual'), ('company', 'Company')],
         compute='_compute_company_type', inverse='_write_company_type')
     company_id = fields.Many2one('res.company', 'Company', index=True)
+    partner_employee_id = fields.Char("Employee ID", help="Id in the partner RMG's DB")
     color = fields.Integer(string='Color Index', default=0)
     user_ids = fields.One2many('res.users', 'partner_id', string='Users', auto_join=True)
     partner_share = fields.Boolean(
